@@ -155,7 +155,7 @@ namespace ToDoApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ToDoApp.Data.Models.Task", b =>
+            modelBuilder.Entity("ToDoApp.Data.Models.AppTask", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -193,7 +193,7 @@ namespace ToDoApp.Data.Migrations
 
                     b.HasIndex("TargetUserId");
 
-                    b.ToTable("Tasks", (string)null);
+                    b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("ToDoApp.Data.Models.User", b =>
@@ -312,7 +312,7 @@ namespace ToDoApp.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ToDoApp.Data.Models.Task", b =>
+            modelBuilder.Entity("ToDoApp.Data.Models.AppTask", b =>
                 {
                     b.HasOne("ToDoApp.Data.Models.User", "SourceUser")
                         .WithMany()

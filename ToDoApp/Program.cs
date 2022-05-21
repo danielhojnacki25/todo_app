@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 using ToDoApp.Areas.Identity;
 using ToDoApp.Data;
 using ToDoApp.Data.Models;
@@ -28,9 +29,9 @@ builder.Services.AddIdentity<User, IdentityRole>(o => o.SignIn.RequireConfirmedA
 builder.Services.AddScoped<IAppTaskRepository, AppTaskRepository>();
 
 builder.Services.AddMediatR(typeof(GetAppTaskByIdQuery));
-
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddMudServices();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 
 var app = builder.Build();

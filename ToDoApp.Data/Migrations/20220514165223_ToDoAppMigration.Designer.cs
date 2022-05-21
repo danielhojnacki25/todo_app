@@ -12,8 +12,8 @@ using ToDoApp.Data;
 namespace ToDoApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220410150146_Update Task Entity")]
-    partial class UpdateTaskEntity
+    [Migration("20220514165223_ToDoAppMigration")]
+    partial class ToDoAppMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -157,7 +157,7 @@ namespace ToDoApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ToDoApp.Data.Models.Task", b =>
+            modelBuilder.Entity("ToDoApp.Data.Models.AppTask", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -314,7 +314,7 @@ namespace ToDoApp.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ToDoApp.Data.Models.Task", b =>
+            modelBuilder.Entity("ToDoApp.Data.Models.AppTask", b =>
                 {
                     b.HasOne("ToDoApp.Data.Models.User", "SourceUser")
                         .WithMany()
